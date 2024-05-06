@@ -1,0 +1,29 @@
+* I don't like the pre-existing list of word + POS-tags used for the pattern matching. Why not make our own?
+
+I.e., use flair, replace quotations (with are prone to none-standard language) with e.g., "something" and thereby collect a dict of word:Counter((pos-tag, count),... ), as the basis of future pattern matching.
+
+* having explore 'surprise' through statistics ... why not reinforce the result via neural methods? e.g., SentenceBert similarity? how
+
+* identify discriminatory features:
+
+    We may ask ... what are common discriminatory features identified by computations lingustics are discriminatory? Also, how may we identify this automatically?
+
+    P(feature | speaker): gives us a speaker fingerprint, but not discriminatory features;
+    P(speaker | feature): gives us discriminatory features;
+        frame it as a binomial ? and thereby estimate range of this param?
+        identify e.g., 99\% CI as non-zero.
+
+    * token (and sub-token via e.g., word-piece?);
+        * this will pick up e.g., use of contractions ... 
+    * n-grams;
+    * relative counts of in-dictionary vs out-of-dict words;
+    * rate of out-of-dict words by total quotation length;
+    * sentence length;
+
+    * semantic content via neural sentence representations:
+        - SentenceBert
+        X = rows of embeddings [x, E]
+        G = rows of embeddings.[g, E]
+
+        X @ G.T = a matrix, [x,g] of sentence similarities scores: if we average over columns, we get a distribution of average sentence similarities for subset X, which we can map to a normal distribution. Again, apply cohen's D.
+
