@@ -1,5 +1,5 @@
 """
-    Return probabilities of tokens wrt., autoregressive models
+    A script to return [gpt-2 tokens, list of P(token | preceeding)]
 """
 import json
 import logging
@@ -34,7 +34,7 @@ def main():
 
     # load the quotes
     print("loading the quotes")
-    with open("tuples_news.json", "r") as f:
+    with open("../tuples_LOC/tuples_news.json", "r") as f:
         quotes = json.load(f)
 
     blacklist_indices = []

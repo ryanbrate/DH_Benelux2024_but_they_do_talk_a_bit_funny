@@ -1,6 +1,0 @@
-python3 applyNLTK.py 0 "splits/split_0.json" & 
-python3 applyNLTK.py 1 "splits/split_1.json" & 
-python3 applyNLTK.py 2 "splits/split_2.json" & 
-python3 applyNLTK.py 3 "splits/split_3.json" & 
-python3 applyNLTK.py 4 "splits/split_4.json" & 
-python3 applyNLTK.py 5 "splits/split_5.json" & 
